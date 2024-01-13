@@ -19,12 +19,28 @@ public class MyServlet extends HttpServlet {
 
 		// send HTML page to client
 		out.println("<html>");
-		out.println("<head><title>Ejemplo HTML desde Servlet</title></head>");
+		out.println("<head>");
+		out.println("<title>Ejercicio optativo Servlet</title>");
+
+		// Aplicamos nuestros etilos
+		out.println("<style>");
+			out.println("body { background-color: #f0f0f0; font-family: Arial, sans-serif; }");
+			out.println(".container { width: 50%; margin: auto; text-align: center; background-color: #fff; padding: 20px; border-radius: 10px; }");
+			out.println("h1 { color: #333; }");
+		out.println("</style>");
+
+		out.println("</head>");
 		out.println("<body>");
-		out.println("<h1>Ejemplo Servlet</h1>");
-		out.println("<p>Este es un ejemplo en el curso de Java para generar HTML desde un Servlet.</p>");
-		out.println("<p><a href=\"/myServlet2\">Vamos al otro Servlet</a></p>");
+		out.println("<div class=\"container\">");
+		out.println("<h1>Ejercicio</h1>");
+		out.println("<form action=\"/myServlet2\">");
+			out.println("<p>Introduce tu nombre.</p>");
+			out.println("<input type=\"text\" id=\"nombre\" name=\"nombre\" value=\"\"><br><br>");
+			out.println("<input type=\"submit\" value=\"Guardar\">");
+		out.println("</form>");
+		out.println("</div>");
 		out.println("</body></html>");
+
 	}
 
 }

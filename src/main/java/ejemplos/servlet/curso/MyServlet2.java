@@ -16,12 +16,20 @@ public class MyServlet2 extends HttpServlet {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-
+		// Recogemos el nombre
+		String nombre = request.getParameter("nombre");
 		// send HTML page to client
+		out.println("<style>");
+			out.println("body { background-color: #f0f0f0; font-family: Arial, sans-serif; }");
+			out.println(".container { width: 50%; margin: auto; text-align: center; background-color: #fff; padding: 20px; border-radius: 10px; }");
+			out.println("h1 { color: #333; }");
+		out.println("</style>");
 		out.println("<html>");
-		out.println("<head><title>Ejemplo HTML desde Servlet</title></head>");
 		out.println("<body>");
-		out.println("<h1>Bienvenido!!</h1>");
+		out.println("<div class=\"container\">");
+			out.println("<h1>Bienvenido " +nombre+ "!!</h1>");
+		out.println("</div>");
+		out.println("</body></html>");
 	}
 
 }
