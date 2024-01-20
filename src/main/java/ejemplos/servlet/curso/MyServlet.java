@@ -12,6 +12,6 @@ import java.io.PrintWriter;
 public class MyServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/formulario.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/formulario.jsp").forward(request, response);
 	}
 }

@@ -14,7 +14,7 @@ public class MyServlet2 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nombre = request.getParameter("nombre");
 		request.setAttribute("nombre", nombre);
-		request.getRequestDispatcher("/bienvenida.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF//bienvenida.jsp").forward(request, response);
 	}
 
 
