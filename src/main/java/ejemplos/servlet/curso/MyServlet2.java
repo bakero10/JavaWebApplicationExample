@@ -11,25 +11,11 @@ import java.io.PrintWriter;
 @WebServlet(urlPatterns = "/myServlet2")
 public class MyServlet2 extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		// Recogemos el nombre
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nombre = request.getParameter("nombre");
-		// send HTML page to client
-		out.println("<style>");
-			out.println("body { background-color: #f0f0f0; font-family: Arial, sans-serif; }");
-			out.println(".container { width: 50%; margin: auto; text-align: center; background-color: #fff; padding: 20px; border-radius: 10px; }");
-			out.println("h1 { color: #333; }");
-		out.println("</style>");
-		out.println("<html>");
-		out.println("<body>");
-		out.println("<div class=\"container\">");
-			out.println("<h1>Bienvenido " +nombre+ "!!</h1>");
-		out.println("</div>");
-		out.println("</body></html>");
+		request.setAttribute("nombre", nombre);
+		request.getRequestDispatcher("/bienvenida.jsp").forward(request, response);
 	}
+
 
 }
